@@ -8,12 +8,115 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
+<style>
+    .PrimaryColor {
+          color: #1DD100;
+    }
+    .custom-bg {
+      background-image: url('/images/banner.png');
+      /* background-size: Full;  */
+      /* background-position: center;  */
+    }
+</style>
 </head>
-<body>
-    
+<bod class="container md:mx-auto">
+    <!-- NavBar------------------------------ -->
+    <section>
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 3</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-xl">MS Ticket Service</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+                </div>
+                <div class="navbar-end">
+                <a class="btn PrimaryColor border-1 bg-lime-50"> Bus <img src="/icon/bus-icon.svg" alt=""> </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+        
+    <!-- bg-img------------------------------ -->
+
+    <section>
+        <div class="hero mx-auto w-[80%] min-h-screen rounded-3xl bg-cover" style="background-image: url(/images/banner.png);">
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-4xl font-bold">End-to-End Travel with</h1>
+                <h1 class="font-extrabold text-3xl PrimaryColor">MS Ticket Service</h1>
+                <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
+                <button class="btn font-bold bg-[#1DD100] ">Buy Tickets</button>
+              </div>
+            </div>
+          </div>
+    </section>
+           
+    <!-- Offer------------------------------ -->
+    <section class="mt-10">
+        <h1 class="font-bold text-center text-5xl"> Best offers for you</h1>
+
+        <div class=" flex gap-8 justify-around mt-20">
+                <div class="w-[30%] h-[170px] bg-amber-500 rounded-lg shadow-2xl">
+
+                    <div class="flex justify-around mt-9">
+                        <div> 15% OFF <br>
+                            on your next purchase <br>
+                            use by January 2024</div>
+                      <div>
+                            NEW15 <br>
+                            Coupon Code
+                      </div>
+                    </div>
+                   
+
+                </div>
+                <div class="w-[30%] h-[170px] bg-red-400 rounded-lg shadow-2xl">
+
+                    <div class="flex justify-around mt-9">
+                        <div> 15% OFF <br>
+                            on your next purchase <br>
+                            use by January 2024</div>
+                      <div>
+                            NEW15 <br>
+                            Coupon Code
+                      </div>
+                    </div>
+
+                </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-6">
+            <button class="btn  font-bold bg-[#1DD100] ">See All Offers</button>
+        </div>
+
+        
+
+    </section>
 
 
+     <!-- main------------------------------ -->
+
+    <main>
+     
+
+    </main>
+
+    <!-- Poop up--------------- -->
 
 
 
