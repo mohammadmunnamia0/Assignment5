@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 //Apply discount if any
                 applyDiscount(totalAmount);
+
+                const grandAmountElement = document.getElementById('GrandAmount');
+                grandAmountElement.textContent = totalAmount;
             }
         });
     });
@@ -85,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const grandTotal = amount - discountAmount;
 
       
-        grandAmountElement.textContent = `Grand Total (After Discount): ${grandTotal}`;
+        grandAmountElement.textContent = `(After Discount): ${grandTotal}`;
 
         couponSection.style.display = 'none';
     }
@@ -113,5 +116,3 @@ function hideBody() {
     hideUsingId('currentPage');
     ShowUsingId('successPage');
 }
-
-

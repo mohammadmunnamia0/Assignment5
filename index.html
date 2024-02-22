@@ -221,26 +221,26 @@
                     <div class=" lg:py-9 px-9">
     
                         <div>
-                            <h1 class="font-bold ml-16 lg:ml-0">Select Your Seat</h1>
+                            <h1 class="font-bold ml-20 lg:ml-0">Select Your Seat</h1>
                         </div>
                         <p>------------------------------------------------------------------------------------------</p>
                         <div class="lg:flex justify-between">
                             <div>
-                                <p class="flex ml-20 lg:ml-0"><img src="/images/seat-gray.png" alt="" /> Available</p>
+                                <p class="flex ml-24 lg:ml-0"><img src="/images/seat-gray.png" alt="" /> Available</p>
                             </div>
                             <div>
-                                <p class="flex ml-20 lg:ml-0"><img src="/images/seat-green-filled.png" alt="" /> <span
+                                <p class="flex ml-24 lg:ml-0"><img src="/images/seat-green-filled.png" alt="" /> <span
                                         class="PrimaryC010r"> Selected</span></p>
                             </div>
                         </div>
                         <p>------------------------------------------------------------------------------------------</p>
                         <div class="flex justify-end mt-14">
-                            <button class="btn btn-active w-[90px] btn-ghost mr-4 lg:mr-0"><img src="/icon/whelll.svg" alt=""></button>
+                            <button class="btn btn-active w-[90px] btn-ghost mr-9 lg:mr-5"><img src="/icon/whelll.svg" alt=""></button>
                         </div>
     
                         <!-- Sets section 8 seat -->
     
-                        <div id="seatsContainer" class="lg:flex justify-around mt-5">
+                        <div id="seatsContainer" class="lg:flex justify-around mt-5  mb-5">
                             <div class="grid grid-cols-3 gap-4 lg:gap-5 mr-10 lg:mr-0 justify-center items-center">
                                 <p class="w-20">A</p>
                                 <p onclick="Click()" id="seat_A1" class="btn w-18 bg-slate-200">A1</p>
@@ -251,9 +251,9 @@
                             </div>
                             <div class="lg:grid lg:grid-cols-2 mt-6 ml-16 lg:ml-28 lg:mt-0 gap-5 justify-end">
     
-                                <p id="seat_A3" class="btn w-20 bg-slate-200">A3</p>
+                                <p id="seat_A3" class="btn w-20 bg-slate-200 ml-8 lg:ml:0">A3</p>
                                 <p id="seat_A4" class="btn w-20 bg-slate-200">A4</p>
-                                <p id="seat_B3" class="btn w-20 bg-slate-200 mt-3 lg:mt-0">B3</p>
+                                <p id="seat_B3" class="btn w-20 bg-slate-200 ml-8 mt-3 lg:mt-0">B3</p>
                                 <p id="seat_B4" class="btn w-20 bg-slate-200">B4</p>
                             </div>
     
@@ -271,7 +271,7 @@
                     <p class="ml-8">-----------------------------------------------------------</p>
     
     
-                    <div class="w-[300px] lg:w-[450px] h-[400px] bg-slate-100 lg:mx-9 my-9 rounded">
+                    <div class="w-[400px] lg:w-[450px] h-[400px] bg-slate-100 lg:mx-9 my-9 rounded">
     
                         <div class="grid items-center justify-center text-3xl lg:text-xl lg:flex lg:justify-evenly">
                                 <div>Seat : <span id="selectedSeatsCount" class="w-4 bg-lime-400 rounded-xl text-2xl">0</span></div>
@@ -286,7 +286,7 @@
                         <p>----------------------------------------------------------------------</p>
                         <div class="grid justify-center items-center lg:flex lg:justify-between px-16">
                                 <div>Total Price</div>
-                                <div>BDT : <span id="totalAmount" class="text-2xl"> 0 TaKa</span></div>
+                                <div>BDT : <span id="totalAmount" class="text-2xl "> 0 TaKa</span></div>
                         </div>
     
                         <!-- Coupon Section -->
@@ -294,14 +294,14 @@
     
                                 <input id="cuponInputArea" type="text" placeholder="Type Your Cupon Code"
                                     class="input input-bordered w-full max-w-xs mt-5"><button id="cuponBtn"
-                                    class="btn bg-[#1DD100] ml-24 mt-5 lg:mt-0 lg:ml-0">Apply</button> </input>
+                                    class="btn bg-[#1DD100] ml-28 mt-5 lg:mt-0 lg:ml-0">Apply</button> </input>
                         </div>
                         <div id="errorMessage" style="color: red;"></div>
     
                         <p>----------------------------------------------------------------------</p>
                         <div class="flex justify-between px-16 mt-5">
                             <div>Grand Total </div>
-                            <div>BDT <span id="GrandAmount" >0</span></div>
+                            <div>BDT <span id="GrandAmount" class="text-xl font-medium PrimaryColor " >0</span></div>
                         </div>
                         <div class="">
                             <button onclick="hideBody()" class="btn bg-[#1DD100] w-full ml-2 lg:ml-0 mt-5">Next</button>
