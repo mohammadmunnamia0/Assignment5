@@ -6,84 +6,78 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get the Ticket Booking Section
         const ticketBookingSection = document.getElementById('buyTicketsSection');
 
-        // Calculate the offset
-        const offset = ticketBookingSection.offsetTop + 2000; 
-
         // Scroll to the Ticket Booking Section with an offset
+
+        const offset = ticketBookingSection.offsetTop + 2000;
+
         window.scrollTo({ top: offset, behavior: 'smooth' });
     });
-    
+
     const seatElements = document.querySelectorAll('.btn.bg-slate-200');
 
-    // Initialize selected seat count and total amount
+
     let selectedSeats = 0;
     let totalAmount = 0;
     let discountPercent = 0;
 
-    // Get coupon code input element
+    // Get coupon code 
     const couponInput = document.getElementById('cuponInputArea');
 
-    // Reset coupon code input value
+
     couponInput.value = '';
 
     // Add click event listener to each seat
-    seatElements.forEach(seat => {
-        seat.addEventListener('click', () => {
-           
-            if (!seat.classList.contains('bg-green-400') && selectedSeats < 4) 
-            
-            {
-                //  Change seat color
-                seat.classList.add('bg-green-400');
+    for (const seat of seatElements) {
+        seat.addEventListener('click', () => 
+        {
 
-                //Reduce the total number of seats left
+    if (!seat.classList.contains('bg-green-400') && selectedSeats < 4) 
 
-                const seatsLeftElement = document.getElementById('seatLeft');
-                seatsLeftElement.textContent = parseInt(seatsLeftElement.textContent) - 1;
+    {
+    seat.classList.add('bg-green-400');
 
-                //Increase the number of selected seats
+        // Reduce the total number of seats left
+        const seatsLeftElement = document.getElementById('seatLeft');
+        seatsLeftElement.textContent = parseInt(seatsLeftElement.textContent) - 1;
 
-                selectedSeats++;
-                const selectedSeatsCountElement = document.getElementById('selectedSeatsCount');
-                selectedSeatsCountElement.textContent = selectedSeats;
+        // Increase the number of selected seats
+        selectedSeats++;
+        const selectedSeatsCountElement = document.getElementById('selectedSeatsCount');
+        selectedSeatsCountElement.textContent = selectedSeats;
 
-                //Append seat info to seatInfoContainer
+        // Append seat info
+        const seatInfoContainer = document.getElementById('seatInfoContainer');
+        const seatName = seat.textContent.trim();
+        const seatInfo = document.createElement('p');
+        seatInfo.textContent = `${seatName} Economy 550`;
+        seatInfoContainer.appendChild(seatInfo);
 
-                const seatInfoContainer = document.getElementById('seatInfoContainer');
-                const seatName = seat.textContent.trim();
-                const seatInfo = document.createElement('p');
-                seatInfo.textContent = `${seatName} Economy 550`;
-                seatInfoContainer.appendChild(seatInfo);
+        //total amount
+        totalAmount += 550;
+        const totalAmountElement = document.getElementById('totalAmount');
+        totalAmountElement.textContent = totalAmount;
 
-                //Calculate total amount
+        // Apply discount
+        applyDiscount(totalAmount);
 
-                totalAmount += 550;
-                const totalAmountElement = document.getElementById('totalAmount');
-                totalAmountElement.textContent = totalAmount;
-
-                //Apply discount if any
-                applyDiscount(totalAmount);
-
-                const grandAmountElement = document.getElementById('GrandAmount');
-                grandAmountElement.textContent = totalAmount;
+        const grandAmountElement = document.getElementById('GrandAmount');
+        grandAmountElement.textContent = totalAmount;
             }
         });
-    });
+    }
 
-    // Apply discount function
-    function applyDiscount(amount) 
-    {
+    //discount function
+    function applyDiscount(amount) {
         const grandAmountElement = document.getElementById('GrandAmount');
         const errorMessageElement = document.getElementById('errorMessage');
         const couponSection = document.getElementById('CuponSection');
 
-        // Reset error message
         errorMessageElement.textContent = '';
 
-        // Calculate discount based on the coupon code using Switch Case
+        //discount
         const couponCode = couponInput.value.trim();
-        switch (couponCode)
-         {
+        switch (couponCode) 
+        {
             case 'NEW15':
                 discountPercent = 15;
                 break;
@@ -91,37 +85,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 discountPercent = 20;
                 break;
             default:
-                return ; 
+                return;
         }
 
-        // Calculate discount amount
+        // CalculateION
         const discountAmount = (amount * discountPercent) / 100;
 
-        
         const grandTotal = amount - discountAmount;
 
-      
         grandAmountElement.textContent = `(After Discount): ${grandTotal}`;
 
         couponSection.style.display = 'none';
     }
 
     // Add click event listener to coupon button
-    
     const couponBtn = document.getElementById('cuponBtn');
-    couponBtn.addEventListener('click', () => {
+    couponBtn.addEventListener('click', () => 
+    {
         applyDiscount(totalAmount);
     });
 });
 
-//hide and show page
+// Hide and show page
 function hideUsingId(idHide) {
     const hideElement = document.getElementById(idHide);
     hideElement.classList.add('hidden');
 }
-function ShowUsingId(idShow)
-{
-    const ShowElement  =document.getElementById(idShow);
+function ShowUsingId(idShow) {
+    const ShowElement = document.getElementById(idShow);
     ShowElement.classList.remove('hidden');
 }
 
@@ -130,16 +121,13 @@ function hideBody() {
     ShowUsingId('successPage');
 }
 
-
-
-//hide and show page Success page
+// Hide and show page Success page
 function hide(idForHide) {
     const hideElements = document.getElementById(idForHide);
     hideElements.classList.add('hidden');
 }
-function Show(idForShow)
-{
-    const ShowElements=document.getElementById(idForShow);
+function Show(idForShow) {
+    const ShowElements = document.getElementById(idForShow);
     ShowElements.classList.remove('hidden');
 }
 
