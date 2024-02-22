@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const buyTicketsButton = document.getElementById('buyTicketsButton');
+    buyTicketsButton.addEventListener('click', function () {
+        // Get the Ticket Booking Section
+        const ticketBookingSection = document.getElementById('buyTicketsSection');
+        // Calculate the offset
+        const offset = ticketBookingSection.offsetTop + 2000; // Adjust the offset as needed
+        // Scroll to the Ticket Booking Section with an offset
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+    });
     
     const seatElements = document.querySelectorAll('.btn.bg-slate-200');
 
