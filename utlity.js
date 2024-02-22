@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: offset, behavior: 'smooth' });
     });
 
-    const seatElements = document.querySelectorAll('.btn.bg-slate-200');
+    const seatElements = document.querySelectorAll('.seat');
 
     let selectedSeats = 0;
     let totalAmount = 0;
