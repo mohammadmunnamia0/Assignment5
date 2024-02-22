@@ -21,7 +21,8 @@
         }
     </style>
 </head>
-<bod class="container md:mx-auto">
+
+<body id="nextPage" class="container md:mx-auto ">
     <!-- NavBar------------------------------ -->
     <section>
         <nav>
@@ -60,7 +61,7 @@
 
     <!-- bg-img------------------------------ -->
 
-    <section>
+    <section id="buyTicketsSection">
         <div class="hero mx-auto w-[80%] min-h-screen rounded-3xl bg-cover"
             style="background-image: url(/images/banner.png);">
             <div class="hero-content text-center text-neutral-content">
@@ -69,7 +70,7 @@
                     <h1 class="font-extrabold text-3xl PrimaryColor">MS Ticket Service</h1>
                     <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The
                         integrated testing features allow for a streamlined.</p>
-                    <button class="btn font-bold bg-[#1DD100] ">Buy Tickets</button>
+                    <button id="buyTicketsButton" class="btn font-bold bg-[#1DD100] ">Buy Tickets</button>
                 </div>
             </div>
         </div>
@@ -157,9 +158,14 @@
                                 <div class="bg-lime-100 border-2 px-5 py-2 h-[45px] rounded-xl">
                                     <div class="flex">
 
-                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
+                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
+                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
+                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
+                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
+                                        <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
 
-                                        <img src="/images/seat-green.png" alt=""> <span>8</span> Seats Left
+                                        <img src="/images/seat-green.png" alt=""> <span id="seatLeft">8</span> Seats
+                                        Left
                                     </div>
                                 </div>
 
@@ -196,7 +202,7 @@
                         </div>
                     </div>
                     <!-- =================================== -->
-                  
+
 
                     <div class="grid justify-center items-center">
                         <div class="grid grid-cols-1">
@@ -212,10 +218,12 @@
             </div>
         </section>
 
-        <!-- Ticket Booking Form --------------------------->
-        <section class="mt-32 shadow-xl border-2 w-3/4 h-[450px] mx-auto rounded-xl flex justify-between">
+        <!-- Ticket Booking Section --------------------------->
+        <section class="mt-32 shadow-xl border-2 w-3/4 h-[650px] mx-auto rounded-xl flex justify-between">
 
             <!-- div1 -->
+
+
             <div class="border-2 w-[650px]">
                 <div class=" py-9 px-9">
 
@@ -237,24 +245,23 @@
                         <button class="btn btn-active w-[90px] btn-ghost"><img src="/icon/whelll.svg" alt=""></button>
                     </div>
 
+                    <!-- Sets section 8 seat -->
 
-                       <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
-                    <!-- sets -->
-                    <div class="flex justify-around mt-5">
+                    <div id="seatsContainer" class="flex justify-around mt-5">
                         <div class="grid grid-cols-3 gap-5 justify-center items-center">
-                            <p onclick=""  class="w-20">A</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">A1</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">A2</p>
-                            <p onclick="" class="w-20">B</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">B1</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">B2</p>
+                            <p class="w-20">A</p>
+                            <p onclick="Click()" id="seat_A1" class="btn w-20 bg-slate-200">A1</p>
+                            <p id="seat_A2" class="btn w-20 bg-slate-200">A2</p>
+                            <p class="w-20">B</p>
+                            <p id="seat_B1" class="btn w-20 bg-slate-200">B1</p>
+                            <p id="seat_B2" class="btn w-20 bg-slate-200">B2</p>
                         </div>
                         <div class="grid grid-cols-2 gap-5">
 
-                            <p onclick=""  class="btn w-20 bg-slate-200">A3</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">A4</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">B3</p>
-                            <p onclick="" class="btn w-20 bg-slate-200">B4</p>
+                            <p id="seat_A3" class="btn w-20 bg-slate-200">A3</p>
+                            <p id="seat_A4" class="btn w-20 bg-slate-200">A4</p>
+                            <p id="seat_B3" class="btn w-20 bg-slate-200">B3</p>
+                            <p id="seat_B4" class="btn w-20 bg-slate-200">B4</p>
                         </div>
 
                     </div>
@@ -263,7 +270,7 @@
 
             </div>
 
-            <!-- div2 -->
+            <!-- div2 Calculation tickcket price and cupon part -->
             <div>
                 <div class="mt-9">
                     <h1 class="font-bold">Select Your Seat</h1>
@@ -271,36 +278,40 @@
                 <p>-----------------------------------------------------------</p>
 
 
-                <div class="w-[450px] h-[300px] bg-slate-100 mx-9 my-9 rounded-xl">
+                <div class="w-[450px] h-[400px] bg-slate-100 mx-9 my-9 rounded-xl">
 
                     <div class="flex justify-evenly">
-                        <div>Seat <span class="w-4 bg-lime-400 rounded-xl">0</span></div>
+                        <div>Seat <span id="selectedSeatsCount" class="w-4 bg-lime-400 rounded-xl">0</span></div>
                         <div>Class</div>
                         <div>price</div>
                     </div>
                     <p>----------------------------------------------------------------------</p>
-                       <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->   <!--@@@@@@@@############$$$$$$$$$$@@@@@@@@@@@  -->
-                    <div>
+
+                    <div id="seatInfoContainer" class="grid justify-around">
 
                     </div>
                     <p>----------------------------------------------------------------------</p>
                     <div class="flex justify-between px-16">
                         <div>Total Price</div>
-                        <div>BDT <span>0</span></div>
+                        <div>BDT <span id="totalAmount">0</span></div>
                     </div>
-                    <div class="ml-7 ">
-                        
-                        <input type="text" placeholder="Type here"
-                            class="input input-bordered w-full max-w-xs mt-5"><button
+
+                    <!-- cupon -->
+                    <div id="CuponSection" class="ml-7">
+
+                        <input id="cuponInputArea" type="text" placeholder="Type here"
+                            class="input input-bordered w-full max-w-xs mt-5"><button id="cuponBtn"
                             class="btn bg-[#1DD100]">Apply</button> </input>
                     </div>
+                    <div id="errorMessage" style="color: red;"></div>
+
                     <p>----------------------------------------------------------------------</p>
                     <div class="flex justify-between px-16 mt-5">
                         <div>Grand Total </div>
-                        <div>BDT <span>0</span></div>
+                        <div>BDT <span id="GrandAmount">0</span></div>
                     </div>
-                    <div>
-                        <button class="btn bg-[#1DD100] w-full mt-5">Next</button>
+                    <div class="">
+                        <button onclick="hideBody()" class="btn bg-[#1DD100] w-full mt-5">Next</button>
                     </div>
 
                 </div>
@@ -311,25 +322,32 @@
         </section>
 
 
+
+        <!-- Succes Page -->
+        <section id="successPage" class="hidden">
+            <section class=" grid justify-center border-2 items-center text-center mt-3 w-[620px] h-[420px] mx-auto rounded-xl">
+                <div class="grid justify-center items-center">
+                    <img src="/images/success.png" alt="">
+                    <h1 class="text-3xl font-bold PrimaryColor">Success.</h1>
+                </div>
+                <div>
+                   <h1 class="text-3xl font-bold">Thank you for Booking Our Bus Seats.</h1> 
+            We are working hard to find the best service and deals for you. <br>
+            Shortly you will find a confirmation in your email
+                </div>
+                <div>
+                    <button class="btn bg-[#1DD100] w-full mt-3">Continue</button>
+                </div>
+            </section>
+        </section>
+
+
     </main>
-
-    <!-- Poop up--------------- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="/ticket.js"></script>
+    
     <script src="/utlity.js"></script>
-    </body>
+
+
+</body>
 
 </html>
+

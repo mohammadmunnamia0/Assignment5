@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Get all seat elements
     const seatElements = document.querySelectorAll('.btn.bg-slate-200');
@@ -7,17 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let totalAmount = 0;
     let discountPercent = 0;
 
-    // Get coupon code input element
     const couponInput = document.getElementById('cuponInputArea');
 
     // Reset coupon code input value
     couponInput.value = '';
 
     // Add click event listener to each seat
-    seatElements.forEach(seat => {
+    seatElements.forEach(seat => 
+    {
         seat.addEventListener('click', () => {
             // Check if the seat is already selected or not
-            if (!seat.classList.contains('bg-green-400') && selectedSeats < 4) {
+            if (!seat.classList.contains('bg-gray-400') && selectedSeats < 4) {
                 // Task 1: Change seat color
                 seat.classList.add('bg-green-400');
 
@@ -48,39 +50,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+   
     // Apply discount function
-    function applyDiscount(amount) {
-        const grandAmountElement = document.getElementById('GrandAmount');
-        const errorMessageElement = document.getElementById('errorMessage');
-        const couponSection = document.getElementById('CuponSection');
+function applyDiscount(amount) {
+    const grandAmountElement = document.getElementById('GrandAmount');
+    const errorMessageElement = document.getElementById('errorMessage');
 
-        // Reset error message
-        errorMessageElement.textContent = '';
+    // Reset error message
+    errorMessageElement.textContent = '';
 
-        // Calculate discount based on the coupon code
-        const couponCode = couponInput.value.trim();
-        switch (couponCode) {
-            case 'NEW15':
-                discountPercent = 15;
-                break;
-            case 'Couple 20':
-                discountPercent = 20;
-                break;
-            default:
-                return; // Exit function early if the coupon code is invalid
-        }
-
-        // Calculate discount amount
-        const discountAmount = (amount * discountPercent) / 100;
-
-        // Calculate grand total after discount
-        const grandTotal = amount - discountAmount;
-
-        // Update grand total element with text
-        grandAmountElement.textContent = `Grand Total (After Discount): ${grandTotal}`;
-
-        couponSection.style.display = 'none';
+    // Calculate discount based on the coupon code
+    const couponCode = document.getElementById('cuponInputArea').value.trim();
+    switch (couponCode) {
+        case 'NEW15':
+            discountPercent = 15;
+            break;
+        case 'Couple 20':
+            discountPercent = 20;
+            break;
+        default:
+            return; // Exit function early if the coupon code is invalid
     }
+
+    // Calculate discount amount
+    const discountAmount = (amount * discountPercent) / 100;
+    
+    // Calculate grand total after discount
+    const grandTotal = amount - discountAmount;
+
+    // Update grand total element with text
+    grandAmountElement.textContent = `Grand Total (After Discount): ${grandTotal}`;
+}
 
     // Add click event listener to coupon button
     const couponBtn = document.getElementById('cuponBtn');
@@ -88,3 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
         applyDiscount(totalAmount);
     });
 });
+
+
+
+
+
+
+
