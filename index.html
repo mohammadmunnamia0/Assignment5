@@ -218,18 +218,18 @@
                 <!-- div1 -->
 
                 <div class="border-2 lg:w-[650px]">
-                    <div class=" py-9 px-9">
+                    <div class=" lg:py-9 px-9">
     
                         <div>
-                            <h1 class="font-bold">Select Your Seat</h1>
+                            <h1 class="font-bold ml-16 lg:ml-0">Select Your Seat</h1>
                         </div>
                         <p>------------------------------------------------------------------------------------------</p>
                         <div class="lg:flex justify-between">
                             <div>
-                                <p class="flex"><img src="/images/seat-gray.png" alt="" /> Available</p>
+                                <p class="flex ml-20 lg:ml-0"><img src="/images/seat-gray.png" alt="" /> Available</p>
                             </div>
                             <div>
-                                <p class="flex"><img src="/images/seat-green-filled.png" alt="" /> <span
+                                <p class="flex ml-20 lg:ml-0"><img src="/images/seat-green-filled.png" alt="" /> <span
                                         class="PrimaryC010r"> Selected</span></p>
                             </div>
                         </div>
@@ -271,10 +271,10 @@
                     <p class="ml-8">-----------------------------------------------------------</p>
     
     
-                    <div class="w-[280px] lg:w-[450px] h-[400px] bg-slate-100 lg:mx-9 my-9 rounded">
+                    <div class="w-[300px] lg:w-[450px] h-[400px] bg-slate-100 lg:mx-9 my-9 rounded">
     
                         <div class="grid items-center justify-center text-3xl lg:text-xl lg:flex lg:justify-evenly">
-                                <div>Seat <span id="selectedSeatsCount" class="w-4 bg-lime-400 rounded-xl text-2xl">0</span></div>
+                                <div>Seat : <span id="selectedSeatsCount" class="w-4 bg-lime-400 rounded-xl text-2xl">0</span></div>
                                 <div>Class</div>
                                 <div>price</div>
                         </div>
@@ -284,9 +284,9 @@
     
                         </div>
                         <p>----------------------------------------------------------------------</p>
-                        <div class="lg:flex justify-between px-16">
+                        <div class="grid justify-center items-center lg:flex lg:justify-between px-16">
                                 <div>Total Price</div>
-                                <div>BDT <span id="totalAmount">0</span></div>
+                                <div>BDT : <span id="totalAmount" class="text-2xl"> 0 TaKa</span></div>
                         </div>
     
                         <!-- Coupon Section -->
@@ -294,17 +294,17 @@
     
                                 <input id="cuponInputArea" type="text" placeholder="Type Your Cupon Code"
                                     class="input input-bordered w-full max-w-xs mt-5"><button id="cuponBtn"
-                                    class="btn bg-[#1DD100]">Apply</button> </input>
+                                    class="btn bg-[#1DD100] ml-24 mt-5 lg:mt-0 lg:ml-0">Apply</button> </input>
                         </div>
                         <div id="errorMessage" style="color: red;"></div>
     
                         <p>----------------------------------------------------------------------</p>
                         <div class="flex justify-between px-16 mt-5">
                             <div>Grand Total </div>
-                            <div>BDT <span id="GrandAmount">0</span></div>
+                            <div>BDT <span id="GrandAmount" >0</span></div>
                         </div>
                         <div class="">
-                            <button onclick="hideBody()" class="btn bg-[#1DD100] w-full mt-5">Next</button>
+                            <button onclick="hideBody()" class="btn bg-[#1DD100] w-full ml-2 lg:ml-0 mt-5">Next</button>
                         </div>
     
                     </div>
@@ -318,8 +318,8 @@
 
     <!-- Successful Page -->
 
-    <section id="successPage" class="hidden mt-48">
-        <section class=" grid justify-center border-2 items-center text-center mt-3 w-[620px] h-[420px] mx-auto rounded-xl">
+    <section id="successPage" class="hidden  lg:mt-48"> 
+        <section class=" grid justify-center border-2 items-center text-center mt-3 lg:w-[620px] h-[420px] mx-auto rounded-xl">
             <div class="grid justify-center items-center">
                 <img src="/images/success.png" alt="">
                 <h1 class="text-3xl font-bold PrimaryColor">Success.</h1>
@@ -335,11 +335,6 @@
         </section>
     </section>
     
-
-
-
-
-
 
     <script src="/utlity.js"></script>
 </body>
