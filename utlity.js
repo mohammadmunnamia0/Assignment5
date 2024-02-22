@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 discountPercent = 20;
                 break;
             default:
-                return; 
+                return ; 
         }
 
         // Calculate discount amount
@@ -115,4 +115,22 @@ function ShowUsingId(idShow)
 function hideBody() {
     hideUsingId('currentPage');
     ShowUsingId('successPage');
+}
+
+
+
+//hide and show page Success page
+function hide(idForHide) {
+    const hideElements = document.getElementById(idForHide);
+    hideElements.classList.add('hidden');
+}
+function Show(idForShow)
+{
+    const ShowElements=document.getElementById(idForShow);
+    ShowElements.classList.remove('hidden');
+}
+
+function hideB() {
+    hide('successPage');
+    Show('currentPage');
 }
